@@ -77,6 +77,7 @@ class Filters extends BaseFilters
             'toolbar',
             'honeypot',
             'secureheaders',
+            'toolbar',     // Debug Toolbar
         ],
     ];
 
