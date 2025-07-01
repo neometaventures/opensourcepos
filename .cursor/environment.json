@@ -1,0 +1,11 @@
+{
+  "agentCanUpdateSnapshot": true,
+  "terminals": [
+    {
+      "name": "NuShell",
+      "command": "nu"
+    }
+  ],
+  "install": "bun i",
+  "start": "bun dev"
+}
