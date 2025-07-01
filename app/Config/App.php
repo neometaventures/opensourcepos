@@ -26,7 +26,7 @@ class App extends BaseConfig
      *
      * @var bool
      */
-    public bool $db_log_enabled = false;
+    public bool $db_log_enabled = true;
 
     /**
      * DB Query Log only long-running queries
