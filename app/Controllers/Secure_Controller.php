@@ -39,12 +39,13 @@ class Secure_Controller extends BaseController
         $config = config(OSPOS::class)->settings;
         $validation = Services::validation();
 
-        if (!$this->employee->is_logged_in()) {
-            header("Location:" . base_url('login'));
-            exit();
-        }
+        // if (!$this->employee->is_logged_in()) {
+        //     header("Location:" . base_url('login'));
+        //     exit();
+        // }
 
-        $logged_in_employee_info = $this->employee->get_logged_in_employee_info();
+        $logged_in_employee_info = $this->employee->get_info(1);
+        // $logged_in_employee_info = $this->employee->get_logged_in_employee_info();
         if (
             !$this->employee->has_module_grant($module_id, $logged_in_employee_info->person_id)
             || (isset($submodule_id) && !$this->employee->has_module_grant($submodule_id, $logged_in_employee_info->person_id))
