@@ -57,7 +57,7 @@ $RECYCLE.BIN/
 # Other
 generate_languages.php
 dist
-docs
+# docs
 /patches
 translations
 /.buildpath
