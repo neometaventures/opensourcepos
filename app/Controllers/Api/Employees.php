@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Api;
 
+// use App\Controllers\Persons;
 use App\Models\Module;
 use Config\Services;
 

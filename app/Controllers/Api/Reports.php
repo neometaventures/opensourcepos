@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Api;
+use App\Controllers\Secure_Controller;
 
 use App\Models\Attribute;
 use App\Models\Customer;
@@ -57,7 +58,7 @@ class Reports extends Secure_Controller
         $method_name = $request->getUri()->getSegment(2);
         $exploder = explode('_', $method_name);
 
-        $this->attribute = config(Attribute::class);
+        $this->attribute = model(Attribute::class);
         $this->config = config(OSPOS::class)->settings;
         $this->customer = model(Customer::class);
         $this->stock_location = model(Stock_location::class);

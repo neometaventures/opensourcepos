@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Api;
+use App\Controllers\Secure_Controller;
 
 use App\Models\Expense;
 use App\Models\Expense_category;

@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Api;
+use App\Controllers\Secure_Controller;
 
 use App\Models\Attribute;
-use Config\Services;
-use CodeIgniter\API\ResponseTrait;
-require_once('Secure_Controller.php');
 
 /**
  * Attributes controls the custom attributes assigned to items

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Api;
+use App\Controllers\Secure_Controller;
 
 use CodeIgniter\HTTP\RedirectResponse;
 
@@ -18,7 +19,7 @@ class Home extends Secure_Controller
     {
         $logged_in = $this->employee->is_logged_in();
         // echo view('home/home');
-        echo json_encode($data);
+        echo json_encode([]);
 
     }
 

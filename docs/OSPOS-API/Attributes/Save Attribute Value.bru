@@ -1,0 +1,15 @@
+meta {
+  name: Save Attribute Value
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base}}/attributes/search?term
+  body: none
+  auth: inherit
+}
+
+params:query {
+  term: 
+}
