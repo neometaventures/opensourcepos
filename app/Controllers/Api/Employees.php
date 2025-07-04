@@ -98,7 +98,9 @@ class Employees extends Persons
         }
         $data['all_subpermissions'] = $permissions;
 
-        echo view('employees/form', $data);
+        // echo view('employees/form', $data);
+        echo json_encode($data);
+
     }
 
     /**

@@ -85,7 +85,9 @@ class Items extends Secure_Controller
             'temporary'      => lang('Items.temp')
         ];
 
-        echo view('items/manage', $data);
+        // echo view('items/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -394,7 +396,9 @@ class Items extends Secure_Controller
             $data['selected_low_sell_item'] = '';
         }
 
-        echo view('items/form', $data);
+        // echo view('items/form', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -423,7 +427,9 @@ class Items extends Secure_Controller
             $data['item_quantities'][$location['location_id']] = $quantity;
         }
 
-        echo view('items/form_inventory', $data);
+        // echo view('items/form_inventory', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -450,7 +456,9 @@ class Items extends Secure_Controller
             $data['item_quantities'][$location['location_id']] = $quantity;
         }
 
-        echo view('items/form_count_details', $data);
+        // echo view('items/form_count_details', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -476,7 +484,9 @@ class Items extends Secure_Controller
         }
         $data['items'] = $result;
 
-        echo view('barcodes/barcode_sheet', $data);
+        // echo view('barcodes/barcode_sheet', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -513,7 +523,9 @@ class Items extends Secure_Controller
             unset($data['definition_names'][$definition_id]);
         }
 
-        echo view('attributes/item', $data);
+        // echo view('attributes/item', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -549,7 +561,9 @@ class Items extends Secure_Controller
             unset($data['definition_names'][$definition_id]);
         }
 
-        echo view('attributes/item', $data);
+        // echo view('attributes/item', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -579,7 +593,9 @@ class Items extends Secure_Controller
             0  => lang('Items.change_all_to_unserialized')
         ];
 
-        echo view('items/form_bulk', $data);
+        // echo view('items/form_bulk', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -933,7 +949,9 @@ class Items extends Secure_Controller
      */
     public function getCsvImport(): void
     {
-        echo view('items/form_csv_import');
+        // echo view('items/form_csv_import');
+        echo json_encode([]);
+
     }
 
     /**

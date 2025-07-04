@@ -26,7 +26,9 @@ class Tax_categories extends Secure_Controller
     {
         $data['tax_categories_table_headers'] = get_tax_categories_table_headers();
 
-        echo view('taxes/tax_categories', $data);
+        // echo view('taxes/tax_categories', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -72,7 +74,9 @@ class Tax_categories extends Secure_Controller
     {
         $data['tax_category_info'] = $this->tax_category->get_info($tax_category_id);
 
-        echo view("taxes/tax_category_form", $data);
+        // echo view("taxes/tax_category_form", $data);
+        echo json_encode($data);
+
     }
 
 

@@ -26,7 +26,8 @@ class Tax_codes extends Secure_Controller
      */
     public function getIndex(): void
     {
-        echo view('taxes/tax_codes', $this->get_data());
+        // echo view('taxes/tax_codes', $this->get_data());
+        echo json_encode($this->get_data());
     }
 
     /**
@@ -83,7 +84,8 @@ class Tax_codes extends Secure_Controller
     {
         $data['tax_code_info'] = $this->tax_code->get_info($tax_code_id);
 
-        echo view("taxes/tax_code_form", $data);
+        // echo view("taxes/tax_code_form", $data);
+        echo json_encode($data);
     }
 
 

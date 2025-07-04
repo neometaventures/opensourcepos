@@ -23,7 +23,9 @@ class Expenses_categories extends Secure_Controller    // TODO: Is this class ev
     {
         $data['table_headers'] = get_expense_category_manage_table_headers();
 
-        echo view('expenses_categories/manage', $data);
+        // echo view('expenses_categories/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -67,7 +69,9 @@ class Expenses_categories extends Secure_Controller    // TODO: Is this class ev
     {
         $data['category_info'] = $this->expense_category->get_info($expense_category_id);
 
-        echo view("expenses_categories/form", $data);
+        // echo view("expenses_categories/form", $data);
+        echo json_encode($data);
+
     }
 
     /**

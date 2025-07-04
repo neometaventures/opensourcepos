@@ -67,7 +67,8 @@ class Taxes extends Secure_Controller
 
         $data['tax_type_options'] = $this->tax_lib->get_tax_type_options($data['default_tax_type']);
 
-        echo view('taxes/manage', $data);
+        // echo view('taxes/manage', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -192,7 +193,8 @@ class Taxes extends Secure_Controller
 
         $data['tax_rates'] = $tax_rates;
 
-        echo view('taxes/tax_code_form', $data);
+        // echo view('taxes/tax_code_form', $data);
+        echo json_encode($data);
     }
 
 
@@ -226,7 +228,8 @@ class Taxes extends Secure_Controller
             $data['tax_rate'] = $tax_rate_info->tax_rate;
         }
 
-        echo view('taxes/tax_rates_form', $data);
+        // echo view('taxes/tax_rates_form', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -290,7 +293,8 @@ class Taxes extends Secure_Controller
 
         $data['tax_rates'] = $tax_rates;
 
-        echo view('taxes/tax_category_form', $data);
+        // echo view('taxes/tax_category_form', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -354,7 +358,8 @@ class Taxes extends Secure_Controller
 
         $data['tax_rates'] = $tax_rates;
 
-        echo view('taxes/tax_jurisdiction_form', $data);
+        // echo view('taxes/tax_jurisdiction_form', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -547,7 +552,8 @@ class Taxes extends Secure_Controller
     {
         $tax_codes = $this->tax_code->get_all()->getResultArray();
 
-        echo view('partial/tax_codes', ['tax_codes' => $tax_codes]);
+        // echo view('partial/tax_codes', ['tax_codes' => $tax_codes]);
+        echo json_encode(['tax_codes' => $tax_codes]);
     }
 
     /**
@@ -560,7 +566,8 @@ class Taxes extends Secure_Controller
     {
         $tax_categories = $this->tax_category->get_all()->getResultArray();
 
-        echo view('partial/tax_categories', ['tax_categories' => $tax_categories]);
+        // echo view('partial/tax_categories', ['tax_categories' => $tax_categories]);
+        echo json_encode(['tax_categories' => $tax_categories]);
     }
 
     /**
@@ -581,10 +588,15 @@ class Taxes extends Secure_Controller
 
         $tax_types = $this->tax_lib->get_tax_types();
 
-        echo view('partial/tax_jurisdictions', [
+        // echo view('partial/tax_jurisdictions', [
+        //     'tax_jurisdictions' => $tax_jurisdictions,
+        //     'tax_types'         => $tax_types,
+        //     'default_tax_type'  => $default_tax_type
+        // ]);
+        echo json_encode([
             'tax_jurisdictions' => $tax_jurisdictions,
-            'tax_types'         => $tax_types,
-            'default_tax_type'  => $default_tax_type
+            'tax_types' => $tax_types,
+            'default_tax_type' => $default_tax_type
         ]);
     }
 }

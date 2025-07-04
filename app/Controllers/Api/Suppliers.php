@@ -23,7 +23,8 @@ class Suppliers extends Persons
     {
         $data['table_headers'] = get_suppliers_manage_table_headers();
 
-        echo view('people/manage', $data);
+        // echo view('people/manage', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -102,7 +103,8 @@ class Suppliers extends Persons
         $data['person_info'] = $info;
         $data['categories'] = $this->supplier->get_categories();
 
-        echo view("suppliers/form", $data);
+        // echo view("suppliers/form", $data);
+        echo json_encode($data);
     }
 
     /**

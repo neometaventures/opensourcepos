@@ -114,7 +114,8 @@ class Reports extends Secure_Controller
             'permission_ids' => $permissions_ids,
         ];
 
-        echo view('reports/listing', $data);
+        // echo view('reports/listing', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -161,7 +162,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -207,7 +209,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -244,7 +247,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -292,7 +296,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -338,7 +343,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -388,7 +394,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -436,7 +443,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -482,7 +490,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -521,7 +530,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -541,7 +551,8 @@ class Reports extends Secure_Controller
         $data['discount_type_options'] = ['0' => lang('Reports.discount_percent'), '1' => lang('Reports.discount_fixed')];
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/date_input', $data);
+        // echo view('reports/date_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -579,7 +590,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -637,7 +649,8 @@ class Reports extends Secure_Controller
             'summary_data' => $summary
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -656,7 +669,8 @@ class Reports extends Secure_Controller
         $data['mode'] = 'sale';
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/date_input', $data);
+        // echo view('reports/date_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -670,7 +684,8 @@ class Reports extends Secure_Controller
         $this->clearCache();
 
         $data = [];
-        echo view('reports/date_input', $data);
+        // echo view('reports/date_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -689,7 +704,8 @@ class Reports extends Secure_Controller
         $data['mode'] = 'sale';
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/date_input', $data);
+        // echo view('reports/date_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -705,7 +721,8 @@ class Reports extends Secure_Controller
         $data['stock_locations'] = array_reverse($stock_locations, true);
         $data['mode'] = 'receiving';
 
-        echo view('reports/date_input', $data);
+        // echo view('reports/date_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -750,7 +767,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -796,7 +814,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -843,7 +862,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -886,7 +906,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -931,7 +952,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -975,7 +997,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1019,7 +1042,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1063,7 +1087,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1109,7 +1134,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1157,7 +1183,8 @@ class Reports extends Secure_Controller
             'show_currency'  => false
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1203,7 +1230,8 @@ class Reports extends Secure_Controller
             'show_currency'  => true
         ];
 
-        echo view('reports/graphical', $data);
+        // echo view('reports/graphical', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1230,7 +1258,8 @@ class Reports extends Secure_Controller
         $data['sale_type_options'] = $this->get_sale_type_options();
 
         $data['payment_type'] = $this->get_payment_type();
-        echo view('reports/specific_customer_input', $data);
+        // echo view('reports/specific_customer_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1351,7 +1380,8 @@ class Reports extends Secure_Controller
             'overall_summary_data' => $specific_customer->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular_details', $data);
+        // echo view('reports/tabular_details', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1374,7 +1404,8 @@ class Reports extends Secure_Controller
         $data['specific_input_data'] = $employees;
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/specific_input', $data);
+        // echo view('reports/specific_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1474,7 +1505,8 @@ class Reports extends Secure_Controller
             'overall_summary_data' => $specific_employee->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular_details', $data);
+        // echo view('reports/tabular_details', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1498,7 +1530,8 @@ class Reports extends Secure_Controller
         $data['discount_type_options'] = ['0' => lang('Reports.discount_percent'), '1' => lang('Reports.discount_fixed')];
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/specific_input', $data);
+        // echo view('reports/specific_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1605,7 +1638,8 @@ class Reports extends Secure_Controller
             'overall_summary_data' => $specific_discount->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular_details', $data);
+        // echo view('reports/tabular_details', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1681,7 +1715,8 @@ class Reports extends Secure_Controller
         $data['specific_input_data'] = $suppliers;
         $data['sale_type_options'] = $this->get_sale_type_options();
 
-        echo view('reports/specific_input', $data);
+        // echo view('reports/specific_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1736,7 +1771,8 @@ class Reports extends Secure_Controller
             'summary_data' => $specific_supplier->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1869,7 +1905,8 @@ class Reports extends Secure_Controller
             'details_data_rewards' => $details_data_rewards,
             'overall_summary_data' => $this->detailed_sales->getSummaryData($inputs)
         ];
-        echo view('reports/tabular_details', $data);
+        // echo view('reports/tabular_details', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1993,7 +2030,8 @@ class Reports extends Secure_Controller
             'overall_summary_data' => $this->detailed_receivings->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular_details', $data);
+        // echo view('reports/tabular_details', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -2028,7 +2066,8 @@ class Reports extends Secure_Controller
             'summary_data' => $inventory_low->getSummaryData($inputs)
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -2048,7 +2087,8 @@ class Reports extends Secure_Controller
         $stock_locations['all'] = lang('Reports.all');
         $data['stock_locations'] = array_reverse($stock_locations, true);
 
-        echo view('reports/inventory_summary_input', $data);
+        // echo view('reports/inventory_summary_input', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -2088,7 +2128,8 @@ class Reports extends Secure_Controller
             'summary_data' => $this->inventory_summary->getSummaryData($report_data)
         ];
 
-        echo view('reports/tabular', $data);
+        // echo view('reports/tabular', $data);
+        echo json_encode($data);
     }
 
     /**

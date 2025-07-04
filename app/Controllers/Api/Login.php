@@ -44,7 +44,8 @@ class Login extends BaseController
             ];
 
             if ($this->request->getMethod() !== 'POST') {
-                return view('login', $data);
+                // return view('login', $data);
+                return json_encode($data);
             }
 
             $rules = ['username' => 'required|login_check[data]'];
@@ -58,7 +59,9 @@ class Login extends BaseController
             if (!$this->validate($rules, $messages)) {
                 $data['has_errors'] = !empty($validation->getErrors());
 
-                return view('login', $data);
+                // return view('login', $data);
+                return json_encode($data);
+
             }
 
             if (!$data['is_latest']) {

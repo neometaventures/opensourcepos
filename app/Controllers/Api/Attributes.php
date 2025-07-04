@@ -3,9 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Attribute;
-use CodeIgniter\HTTP\Response;
 use Config\Services;
-
+use CodeIgniter\API\ResponseTrait;
 require_once('Secure_Controller.php');
 
 /**
@@ -27,15 +26,12 @@ class Attributes extends Secure_Controller
      *
      * @return void
      **/
-    public function getIndex(): Response
+    public function getIndex(): void
     {
         $data['table_headers'] = get_attribute_definition_manage_table_headers();
 
         // echo view('attributes/manage', $data);
-        // json response
-        return $this->response->setJSON($data);
-
-        // $data
+        echo json_encode($data);
     }
 
     /**
@@ -217,7 +213,8 @@ class Attributes extends Secure_Controller
         $selected_flags = $info->definition_flags === '' ? $show_all : $info->definition_flags;
         $data['selected_definition_flags'] = $this->get_attributes($selected_flags);
 
-        echo view('attributes/form', $data);
+        // echo view('attributes/form', $data);
+        echo json_encode( $data);
     }
 
     /**

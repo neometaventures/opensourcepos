@@ -65,7 +65,9 @@ class Item_kits extends Secure_Controller
     {
         $data['table_headers'] = get_item_kits_manage_table_headers();
 
-        echo view('item_kits/manage', $data);
+        // echo view('item_kits/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -153,7 +155,9 @@ class Item_kits extends Secure_Controller
         $data['selected_kit_item_id'] = $info->kit_item_id;
         $data['selected_kit_item'] = ($item_kit_id > 0 && isset($info->kit_item_id)) ? $info->item_name : '';
 
-        echo view("item_kits/form", $data);
+        // echo view("item_kits/form", $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -289,6 +293,8 @@ class Item_kits extends Secure_Controller
         $data['barcode_config'] = $barcode_config;
 
         // Display barcodes
-        echo view("barcodes/barcode_sheet", $data);
+        // echo view("barcodes/barcode_sheet", $data);
+        echo json_encode($data);
+
     }
 }

@@ -24,7 +24,9 @@ class Giftcards extends Secure_Controller
     {
         $data['table_headers'] = get_giftcards_manage_table_headers();
 
-        echo view('giftcards/manage', $data);
+        // echo view('giftcards/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -106,7 +108,9 @@ class Giftcards extends Secure_Controller
         $data['giftcard_id'] = $giftcard_id;
         $data['giftcard_value'] = $giftcard_info->value;
 
-        echo view("giftcards/form", $data);
+        // echo view("giftcards/form", $data);
+        echo json_encode($data);
+
     }
 
     /**

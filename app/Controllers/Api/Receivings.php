@@ -251,7 +251,8 @@ class Receivings extends Secure_Controller
         $data['selected_supplier_id'] = $receiving_info['supplier_id'];
         $data['receiving_info'] = $receiving_info;
 
-        echo view('receivings/form', $data);
+        // echo view('receivings/form', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -356,7 +357,9 @@ class Receivings extends Secure_Controller
 
         $data['print_after_sale'] = $this->receiving_lib->is_print_after_sale();
 
-        echo view("receivings/receipt", $data);
+        // echo view("receivings/receipt", $data);
+        echo json_encode($data);
+
 
         $this->receiving_lib->clear_all();
     }
@@ -424,7 +427,9 @@ class Receivings extends Secure_Controller
 
         $data['print_after_sale'] = false;
 
-        echo view("receivings/receipt", $data);
+        // echo view("receivings/receipt", $data);
+        echo json_encode($data);
+
 
         $this->receiving_lib->clear_all();
     }
@@ -470,7 +475,9 @@ class Receivings extends Secure_Controller
 
         $data['print_after_sale'] = $this->receiving_lib->is_print_after_sale();
 
-        echo view("receivings/receiving", $data);
+        // echo view("receivings/receiving", $data);
+        echo json_encode($data);
+
     }
 
     /**

@@ -21,7 +21,8 @@ class Office extends Secure_Controller
      */
     public function getIndex(): void
     {
-        echo view('home/office');
+        // echo view('home/office');
+        echo json_encode([]);
     }
 
     /**

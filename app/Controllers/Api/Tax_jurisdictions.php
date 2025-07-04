@@ -29,7 +29,8 @@ class Tax_jurisdictions extends Secure_Controller
     {
         $data['table_headers'] = get_tax_jurisdictions_table_headers();
 
-        echo view('taxes/tax_jurisdictions', $data);
+        // echo view('taxes/tax_jurisdictions', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -75,7 +76,8 @@ class Tax_jurisdictions extends Secure_Controller
     {
         $data['tax_jurisdiction_info'] = $this->tax_jurisdiction->get_info($tax_jurisdiction_id);
 
-        echo view("taxes/tax_jurisdiction_form", $data);
+        // echo view("taxes/tax_jurisdiction_form", $data);
+        echo json_encode($data);
     }
 
 

@@ -76,7 +76,8 @@ class Secure_Controller extends BaseController
             'controller_name' => $module_id,
             'config'          => $config
         ];
-        view('viewData', $this->global_view_data);
+        // view('viewData', $this->global_view_data);
+        $this->response->setJSON(["global_data" => $this->global_view_data]);
     }
 
     public function sanitizeSortColumn($headers, $field, $default): string

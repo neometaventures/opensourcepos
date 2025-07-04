@@ -272,7 +272,9 @@ class Config extends Secure_Controller
 
         $data['mailchimp']['lists'] = $this->_mailchimp();
 
-        echo view('configs/manage', $data);
+        // echo view('configs/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -621,7 +623,9 @@ class Config extends Secure_Controller
     {
         $stock_locations = $this->stock_location->get_all()->getResultArray();
 
-        echo view('partial/stock_locations', ['stock_locations' => $stock_locations]);
+        // echo view('partial/stock_locations', ['stock_locations' => $stock_locations]);
+        echo json_encode(['stock_locations' => $stock_locations]);
+
     }
 
     /**
@@ -631,7 +635,8 @@ class Config extends Secure_Controller
     {
         $dinner_tables = $this->dinner_table->get_all()->getResultArray();
 
-        echo view('partial/dinner_tables', ['dinner_tables' => $dinner_tables]);
+        // echo view('partial/dinner_tables', ['dinner_tables' => $dinner_tables]);
+        echo json_encode(['dinner_tables' => $dinner_tables]);
     }
 
 
@@ -644,7 +649,8 @@ class Config extends Secure_Controller
     {
         $tax_categories = $this->tax->get_all_tax_categories()->getResultArray();
 
-        echo view('partial/tax_categories', ['tax_categories' => $tax_categories]);
+        // echo view('partial/tax_categories', ['tax_categories' => $tax_categories]);
+        echo json_encode( ['tax_categories' => $tax_categories]);
     }
 
     /**
@@ -657,7 +663,8 @@ class Config extends Secure_Controller
     {
         $customer_rewards = $this->customer_rewards->get_all()->getResultArray();
 
-        echo view('partial/customer_rewards', ['customer_rewards' => $customer_rewards]);
+        // echo view('partial/customer_rewards', ['customer_rewards' => $customer_rewards]);
+        echo json_encode( ['customer_rewards' => $customer_rewards]);
     }
 
     /**

@@ -107,7 +107,8 @@ class Sales extends Secure_Controller
             }
             $data['selected_filters'] = $selected_filters;
 
-            echo view('sales/manage', $data);
+            // echo view('sales/manage', $data);
+            echo json_encode($data);
         }
     }
 
@@ -764,7 +765,9 @@ class Sales extends Secure_Controller
                     $data['error_message'] = lang('Sales.transaction_failed');
                 } else {
                     $data['barcode'] = $this->barcode_lib->generate_receipt_barcode($data['sale_id']);
-                    echo view('sales/' . $invoice_view, $data);
+                    // echo view('sales/' . $invoice_view, $data);
+                    echo json_encode($data);
+
                     $this->sale_lib->clear_all();
                 }
             }
@@ -798,7 +801,9 @@ class Sales extends Secure_Controller
 
                 $data['barcode'] = null;
 
-                echo view('sales/work_order', $data);
+                // echo view('sales/work_order', $data);
+                echo json_encode($data);
+
                 $this->sale_lib->clear_mode();
                 $this->sale_lib->clear_all();
             }
@@ -826,7 +831,9 @@ class Sales extends Secure_Controller
                 $data['cart'] = $this->sale_lib->sort_and_filter_cart($data['cart']);
                 $data['barcode'] = null;
 
-                echo view('sales/quote', $data);
+                // echo view('sales/quote', $data);
+                echo json_encode($data);
+
                 $this->sale_lib->clear_mode();
                 $this->sale_lib->clear_all();
             }
@@ -849,7 +856,9 @@ class Sales extends Secure_Controller
                 $data['error_message'] = lang('Sales.transaction_failed');
             } else {
                 $data['barcode'] = $this->barcode_lib->generate_receipt_barcode($data['sale_id']);
-                echo view('sales/receipt', $data);
+                // echo view('sales/receipt', $data);
+                echo json_encode($data);
+
                 $this->sale_lib->clear_all();
             }
         }
@@ -1214,7 +1223,8 @@ class Sales extends Secure_Controller
             $data['customer_required'] = lang('Sales.customer_optional');
         }
 
-        echo view("sales/register", $data);
+        // echo view("sales/register", $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1227,7 +1237,9 @@ class Sales extends Secure_Controller
     public function getReceipt(int $sale_id): void
     {
         $data = $this->_load_sale_data($sale_id);
-        echo view('sales/receipt', $data);
+        // echo view('sales/receipt', $data);
+        echo json_encode($data);
+
         $this->sale_lib->clear_all();
     }
 
@@ -1239,7 +1251,9 @@ class Sales extends Secure_Controller
     {
         $data = $this->_load_sale_data($sale_id);
 
-        echo view('sales/' . $data['invoice_view'], $data);
+        // echo view('sales/' . $data['invoice_view'], $data);
+        echo json_encode($data);
+
         $this->sale_lib->clear_all();
     }
 
@@ -1292,7 +1306,8 @@ class Sales extends Secure_Controller
 
         $data['new_payment_options'] = $payment_options;
 
-        echo view('sales/form', $data);
+        // echo view('sales/form', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1538,7 +1553,8 @@ class Sales extends Secure_Controller
         $data = [];
         $customer_id = $this->sale_lib->get_customer();
         $data['suspended_sales'] = $this->sale->get_all_suspended($customer_id);
-        echo view('sales/suspended', $data);
+        // echo view('sales/suspended', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -1571,7 +1587,8 @@ class Sales extends Secure_Controller
      */
     public function getSalesKeyboardHelp(): void
     {
-        echo view('sales/help');
+        // echo view('sales/help');
+        echo json_encode([]);
     }
 
     /**

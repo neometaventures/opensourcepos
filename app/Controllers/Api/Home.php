@@ -17,7 +17,9 @@ class Home extends Secure_Controller
     public function getIndex(): void
     {
         $logged_in = $this->employee->is_logged_in();
-        echo view('home/home');
+        // echo view('home/home');
+        echo json_encode($data);
+
     }
 
     /**
@@ -45,7 +47,9 @@ class Home extends Secure_Controller
         }
         $data['person_info'] = $person_info;
 
-        echo view('home/form_change_password', $data);
+        // echo view('home/form_change_password', $data);
+        echo json_encode($data);
+
     }
 
     /**

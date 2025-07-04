@@ -35,7 +35,8 @@ class Cashups extends Secure_Controller
         // filters that will be loaded in the multiselect dropdown
         $data['filters'] = ['is_deleted' => lang('Cashups.is_deleted')];
 
-        echo view('cashups/manage', $data);
+        // echo view('cashups/manage', $data);
+        echo json_encode($data);
     }
 
     /**
@@ -180,7 +181,8 @@ class Cashups extends Secure_Controller
 
         $data['cash_ups_info'] = $cash_ups_info;
 
-        echo view("cashups/form", $data);
+        // echo view("cashups/form", $data);
+        echo json_encode($data);
     }
 
     /**

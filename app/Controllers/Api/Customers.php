@@ -46,7 +46,9 @@ class Customers extends Persons
     {
         $data['table_headers'] = get_customer_manage_table_headers();
 
-        echo view('people/manage', $data);
+        // echo view('people/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -227,7 +229,9 @@ class Customers extends Persons
             }
         }
 
-        echo view("customers/form", $data);
+        // echo view("customers/form", $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -388,7 +392,8 @@ class Customers extends Persons
      */
     public function getCsvImport(): void
     {
-        echo view('customers/form_csv_import');
+        // echo view('customers/form_csv_import');
+        echo json_encode([]);
     }
 
     /**

@@ -37,7 +37,9 @@ class Expenses extends Secure_Controller
             'is_deleted'  => lang('Expenses.is_deleted')
         ];
 
-        echo view('expenses/manage', $data);
+        // echo view('expenses/manage', $data);
+        echo json_encode($data);
+
     }
 
     /**
@@ -125,7 +127,9 @@ class Expenses extends Secure_Controller
         // Don't allow gift card to be a payment option in a sale transaction edit because it's a complex change
         $data['payment_options'] = $this->expense->get_payment_options();
 
-        echo view("expenses/form", $data);
+        // echo view("expenses/form", $data);
+        echo json_encode($data);
+
     }
 
     /**

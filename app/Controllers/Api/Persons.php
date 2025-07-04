@@ -27,7 +27,8 @@ abstract class Persons extends Secure_Controller
     {
         $data['table_headers'] = get_people_manage_table_headers();
 
-        echo view('people/manage', $data);
+        // echo view('people/manage', $data);
+        echo json_encode($data);
     }
 
     /**

@@ -29,6 +29,8 @@ class No_access extends BaseController
         $data['module_name']   = $this->module->get_module_name($module_id);
         $data['permission_id'] = $permission_id;
 
-        echo view('no_access', $data);
+        // echo view('no_access', $data);
+        echo json_encode($data);
+
     }
 }

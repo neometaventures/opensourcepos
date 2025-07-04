@@ -22,7 +22,9 @@ class Messages extends Secure_Controller
      */
     public function getIndex(): void
     {
-        echo view('messages/sms');
+        // echo view('messages/sms');
+        echo json_encode([]);
+
     }
 
     /**
@@ -39,7 +41,9 @@ class Messages extends Secure_Controller
         }
         $data['person_info'] = $info;
 
-        echo view('messages/form_sms', $data);
+        // echo view('messages/form_sms', $data);
+        echo json_encode($data);
+
     }
 
     /**
