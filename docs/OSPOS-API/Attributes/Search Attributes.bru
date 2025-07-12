@@ -5,7 +5,14 @@ meta {
 }
 
 get {
-  url: {{base}}/attributes/search
+  url: {{base}}/attributes/search?search&limit&offset&order
   body: none
   auth: inherit
+}
+
+params:query {
+  search: 
+  limit: 
+  offset: 
+  order: 
 }
