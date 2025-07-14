@@ -277,7 +277,7 @@ class Items extends Secure_Controller
         $data['item_tax_info'] = $this->item_taxes->get_info($item_id);
         $data['default_tax_1_rate'] = '';
         $data['default_tax_2_rate'] = '';
-        $data['item_kit_disabled'] = !$this->employee->has_grant('item_kits', $this->employee->get_logged_in_employee_info()->person_id);
+        $data['item_kit_disabled'] = !$this->employee->has_grant('item_kits', $this->employee->get_info(1)->person_id);
         $data['definition_values'] = $this->attribute->get_attributes_by_item($item_id);
         $data['definition_names'] = $this->attribute->get_definition_names();
 
@@ -664,7 +664,8 @@ class Items extends Secure_Controller
             $item_data['pic_filename'] = $upload_data['raw_name'] . '.' . $upload_data['file_ext'];
         }
 
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
 
         if ($this->item->save_value($item_data, $item_id)) {
             $success = true;
@@ -837,7 +838,8 @@ class Items extends Secure_Controller
      */
     public function postSaveInventory($item_id = NEW_ENTRY): void
     {
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
         $cur_item_info = $this->item->get_info($item_id);
         $location_id = $this->request->getPost('stock_location');
         $new_quantity = $this->request->getPost('newquantity');
@@ -971,7 +973,9 @@ class Items extends Secure_Controller
 
                 $failCodes = [];
                 $csv_rows = get_csv_file($_FILES['file_path']['tmp_name']);
-                $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+                // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+                $employee_id = $this->employee->get_info(1)->person_id;
+                
                 $allowed_stock_locations = $this->stock_location->get_allowed_locations();
                 $attribute_definition_names    = $this->attribute->get_definition_names();
 

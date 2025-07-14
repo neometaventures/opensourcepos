@@ -1,0 +1,18 @@
+meta {
+  name: Create Customer
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/customers/save
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  consent: true
+  first_name: Rayyano
+  last_name: Nafeeso
+  date: 2024-6-11 11:00:23
+}

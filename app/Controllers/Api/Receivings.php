@@ -275,7 +275,9 @@ class Receivings extends Secure_Controller
      */
     public function postDelete(int $receiving_id = -1, bool $update_inventory = true): void
     {
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $receiving_ids = $receiving_id == -1 ? $this->request->getPost('ids', FILTER_SANITIZE_NUMBER_INT) : [$receiving_id];    // TODO: Replace -1 with constant
 
         if ($this->receiving->delete_list($receiving_ids, $employee_id, $update_inventory)) {    // TODO: Likely need to surround this block of code in a try-catch to catch the ReflectionException
@@ -328,7 +330,9 @@ class Receivings extends Secure_Controller
             $data['amount_change'] = to_currency($data['amount_tendered'] - $data['total']);
         }
 
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $employee_info = $this->employee->get_info($employee_id);
         $data['employee'] = $employee_info->first_name . ' ' . $employee_info->last_name;
 
@@ -453,7 +457,9 @@ class Receivings extends Secure_Controller
         }
 
         $data['total'] = $this->receiving_lib->get_total();
-        $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_logged_in_employee_info()->person_id);
+        // $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_logged_in_employee_info()->person_id);
+        $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_info(1)->person_id);
+
         $data['comment'] = $this->receiving_lib->get_comment();
         $data['reference'] = $this->receiving_lib->get_reference();
         $data['payment_options'] = $this->receiving->get_payment_options();

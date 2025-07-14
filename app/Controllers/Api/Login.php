@@ -26,9 +26,10 @@ class Login extends BaseController
             $migration = new MY_Migration(config('Migrations'));
             $config = config(OSPOS::class)->settings;
 
-            $gcaptcha_enabled = array_key_exists('gcaptcha_enable', $config)
-                ? $config['gcaptcha_enable']
-                : false;
+            // $gcaptcha_enabled = array_key_exists('gcaptcha_enable', $config)
+            //     ? $config['gcaptcha_enable']
+            //     : false;
+            $gcaptcha_enabled = false;
 
             $migration->migrate_to_ci4();
 
@@ -71,7 +72,8 @@ class Login extends BaseController
                 return redirect()->to('login');
             }
         }
+        // return redirect()->to('home');
+        return json_encode($data);
 
-        return redirect()->to('home');
     }
 }

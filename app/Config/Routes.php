@@ -11,6 +11,9 @@ $routes->get('/', 'Login::index');
 $routes->get('login', 'Login::index');
 $routes->post('login', 'Login::index');
 
+$routes->get('api/login', 'Api\Login::index');
+$routes->post('api/login', 'Api\Login::index');
+
 $routes->add('no_access/index/(:segment)', 'No_access::index/$1');
 $routes->add('no_access/index/(:segment)/(:segment)', 'No_access::index/$1/$2');
 

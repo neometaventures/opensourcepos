@@ -96,8 +96,12 @@ class Cashups extends Secure_Controller
         if ($cash_ups_info->cashup_id == NEW_ENTRY) {
             $cash_ups_info->open_date = date('Y-m-d H:i:s');
             $cash_ups_info->close_date = $cash_ups_info->open_date;
-            $cash_ups_info->open_employee_id = $this->employee->get_logged_in_employee_info()->person_id;
-            $cash_ups_info->close_employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+
+            $cash_ups_info->open_employee_id = $this->employee->get_info(1)->person_id;
+            $cash_ups_info->close_employee_id = $this->employee->get_info(1)->person_id;
+
+            // $cash_ups_info->open_employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+            // $cash_ups_info->close_employee_id = $this->employee->get_logged_in_employee_info()->person_id;
         }
         // If all the amounts are null or 0 that means it's a close cashup
         elseif (

@@ -654,7 +654,10 @@ class Sales extends Secure_Controller
         $data['transaction_date'] = to_date($__time);
         $data['show_stock_locations'] = $this->stock_location->show_locations('sales');
         $data['comments'] = $this->sale_lib->get_comment();
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $employee_info = $this->employee->get_info($employee_id);
         $data['employee'] = $employee_info->first_name . ' ' . mb_substr($employee_info->last_name, 0, 1);
 
@@ -1186,8 +1189,11 @@ class Sales extends Secure_Controller
             $data['payment_options'] = $this->sale->get_payment_options();
         }
 
-        $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_logged_in_employee_info()->person_id);
-        $data['change_price'] = $this->employee->has_grant('sales_change_price', $this->employee->get_logged_in_employee_info()->person_id);
+        // $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_logged_in_employee_info()->person_id);
+        // $data['change_price'] = $this->employee->has_grant('sales_change_price', $this->employee->get_logged_in_employee_info()->person_id);
+
+        $data['items_module_allowed'] = $this->employee->has_grant('items', $this->employee->get_info(1)->person_id);
+        $data['change_price'] = $this->employee->has_grant('sales_change_price', $this->employee->get_info(1)->person_id);
 
         $temp_invoice_number = $this->sale_lib->get_invoice_number();
         $invoice_format = $this->config['sales_invoice_format'];
@@ -1316,7 +1322,8 @@ class Sales extends Secure_Controller
      */
     public function postDelete(int $sale_id = NEW_ENTRY, bool $update_inventory = true): void
     {
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
         $has_grant = $this->employee->has_grant('sales_delete', $employee_id);
 
         if (!$has_grant) {
@@ -1343,7 +1350,9 @@ class Sales extends Secure_Controller
      */
     public function restore(int $sale_id = NEW_ENTRY, bool $update_inventory = true): void
     {
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $has_grant = $this->employee->has_grant('sales_delete', $employee_id);
 
         if (!$has_grant) {
@@ -1372,7 +1381,10 @@ class Sales extends Secure_Controller
     public function postSave(int $sale_id = NEW_ENTRY): void
     {
         $newdate = $this->request->getPost('date', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $inventory = model(Inventory::class);
         $date_formatter = date_create_from_format($this->config['dateformat'] . ' ' . $this->config['timeformat'], $newdate);
         $sale_time = $date_formatter->format('Y-m-d H:i:s');
@@ -1518,7 +1530,10 @@ class Sales extends Secure_Controller
         $dinner_table = $this->sale_lib->get_dinner_table();
         $cart = $this->sale_lib->get_cart();
         $payments = $this->sale_lib->get_payments();
-        $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+
+        // $employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+        $employee_id = $this->employee->get_info(1)->person_id;
+
         $customer_id = $this->sale_lib->get_customer();
         $invoice_number = $this->sale_lib->get_invoice_number();
         $work_order_number = $this->sale_lib->get_work_order_number();

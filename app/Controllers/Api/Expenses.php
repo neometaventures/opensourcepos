@@ -113,7 +113,8 @@ class Expenses extends Secure_Controller
 
         if ($expense_id == NEW_ENTRY) {
             $data['expenses_info']->date = date('Y-m-d H:i:s');
-            $data['expenses_info']->employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+            // $data['expenses_info']->employee_id = $this->employee->get_logged_in_employee_info()->person_id;
+            $data['expenses_info']->employee_id = $this->employee->get_info(1)->person_id;
         }
 
         $data['payments'] = [];

@@ -76,7 +76,7 @@ class Secure_Controller extends BaseController
             'controller_name' => $module_id,
             'config'          => $config
         ];
-        // view('viewData', $this->global_view_data);
+        // echo json_encode( $this->global_view_data);
         // $this->response->setJSON(["global_data" => $this->global_view_data]);
     }
 
