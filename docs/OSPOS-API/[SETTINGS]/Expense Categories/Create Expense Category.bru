@@ -1,0 +1,20 @@
+meta {
+  name: Create Expense Category
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/expenses_categories/save/
+  body: formUrlEncoded
+  auth: inherit
+}
+
+params:query {
+  : 
+}
+
+body:form-urlencoded {
+  category_name: doja cats
+  category_description: 
+}

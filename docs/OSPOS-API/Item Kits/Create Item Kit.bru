@@ -1,0 +1,17 @@
+meta {
+  name: Create Item Kit
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/item_kits/save/
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  name: Final Kit
+  kit_discount: 
+  description: 
+}

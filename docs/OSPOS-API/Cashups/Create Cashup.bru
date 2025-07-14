@@ -1,0 +1,26 @@
+meta {
+  name: Create Cashup
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/cashups/save/-1
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  open_date: 07/14/2025+15:31:37
+  open_employee_id: 1
+  open_amount_cash: 0.00
+  transfer_amount_cash: 0.00
+  close_date: 07/14/2025+15:31:37
+  close_employee_id: 1
+  closed_amount_cash: 0.00
+  closed_amount_due: 0.00
+  closed_amount_card: 0.00
+  closed_amount_check: 0.00
+  closed_amount_total: 0.00
+  description: 
+}

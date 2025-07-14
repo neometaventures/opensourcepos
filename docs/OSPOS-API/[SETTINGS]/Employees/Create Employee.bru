@@ -1,0 +1,57 @@
+meta {
+  name: Create Employee
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/employees/save
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  first_name: Bross
+  last_name: Johnsonss
+  email: 
+  phone_number: 
+  address_1: 
+  address_2: 
+  city: 
+  state: 
+  zip: 
+  country: 
+  comments: 
+  username: brojohns
+  password: brojohnson
+  repeat_password: brojohnson
+  language: :
+  grant_home: home
+  menu_group_home: home
+  grant_customers: customers
+  menu_group_customers: home
+  grant_items: items
+  menu_group_items: home
+  grant_items_stock: items_stock
+  menu_group_items_stock: --
+  grant_item_kits: item_kits
+  menu_group_item_kits: home
+  grant_suppliers: suppliers
+  menu_group_suppliers: home
+  grant_giftcards: giftcards
+  menu_group_giftcards: home
+  grant_messages: messages
+  menu_group_messages: home
+  grant_taxes: taxes
+  menu_group_taxes: home
+  grant_attributes: attributes
+  menu_group_attributes: home
+  grant_expenses: expenses
+  menu_group_expenses: home
+  grant_expenses_categories: expenses_categories
+  menu_group_expenses_categories: home
+  grant_cashups: cashups
+  menu_group_cashups: home
+  grant_config: config
+  menu_group_config: home
+}

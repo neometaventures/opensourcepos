@@ -1,0 +1,20 @@
+meta {
+  name: Create Receiving
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/receivings/add
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  date: 2024-06-01 12:00:00
+  supplier_id: 1
+  employee_id: 1
+  reference: 
+  comment: 
+  item: 20
+}

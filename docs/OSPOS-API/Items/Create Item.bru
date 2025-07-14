@@ -1,0 +1,22 @@
+meta {
+  name: Create Item
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/items/save
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  name: Final Item
+  category: final
+  cost_price: 2
+  unit_price: 2
+  tax_percents[]: 
+  receiving_quantity: 1
+  reorder_level: 1
+  description: 
+}

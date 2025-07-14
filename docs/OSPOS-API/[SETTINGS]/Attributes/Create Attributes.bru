@@ -1,0 +1,22 @@
+meta {
+  name: Create Attributes
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/attributes/saveDefinition/0
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  definition_name: XXXL
+  definition_type: 3
+  definition_group: 
+  definition_flags[]: 1
+  definition_flags[]: 2
+  definition_flags[]: 4
+  definition_unit: 
+  definition_value: []
+}
