@@ -62,7 +62,6 @@ class Login extends BaseController
 
                 // return view('login', $data);
                 return json_encode($data);
-
             }
 
             if (!$data['is_latest']) {
@@ -71,9 +70,9 @@ class Login extends BaseController
                 $migration->setNamespace('App')->latest();
                 return redirect()->to('login');
             }
+            return json_encode($data);
         }
         // return redirect()->to('home');
-        return json_encode($data);
-
+        return json_encode(["already_logged_in"=>true]);
     }
 }
