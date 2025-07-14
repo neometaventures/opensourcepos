@@ -89,3 +89,6 @@ auth.json
 
 # test files
 db*.sql
+
+# editor
+.vscode
