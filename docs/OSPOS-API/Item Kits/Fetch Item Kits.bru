@@ -1,0 +1,17 @@
+meta {
+  name: Fetch Item Kits
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base}}/item_kits/search?search=&offset=0&limit=25
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: 
+  offset: 0
+  limit: 25
+}

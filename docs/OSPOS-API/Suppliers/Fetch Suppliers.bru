@@ -1,0 +1,17 @@
+meta {
+  name: Fetch Suppliers
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base}}/suppliers/search?offset=0&limit=25&search
+  body: none
+  auth: inherit
+}
+
+params:query {
+  offset: 0
+  limit: 25
+  search: 
+}

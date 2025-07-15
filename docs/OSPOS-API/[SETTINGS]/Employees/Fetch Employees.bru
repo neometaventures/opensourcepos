@@ -1,0 +1,17 @@
+meta {
+  name: Fetch Employees
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base}}/employees/search?search=&offset=0&limit=25
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: 
+  offset: 0
+  limit: 25
+}

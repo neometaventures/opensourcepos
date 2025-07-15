@@ -1,0 +1,17 @@
+meta {
+  name: Fetch Expense Categories
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base}}/expenses_categories/search?search=&offset=0&limit=25
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: 
+  offset: 0
+  limit: 25
+}
